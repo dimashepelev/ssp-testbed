@@ -23,7 +23,7 @@ jobs:
     # Steps represent a sequence of tasks that will be executed as part of the job
     steps:
       - name: Download DSP binary
-        run: curl https://dummy-dsp.s3.eu-central-1.amazonaws.com/dsp
+        run: curl -o dsp https://dummy-dsp.s3.eu-central-1.amazonaws.com/dsp
 
       # Runs a single command using the runners shell
       - name: Run a one-line script
