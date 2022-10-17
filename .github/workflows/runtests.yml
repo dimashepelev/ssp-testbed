@@ -23,12 +23,36 @@ jobs:
     # Steps represent a sequence of tasks that will be executed as part of the job
     steps:
       - name: Download DSP binary
-        run: curl -o dsp https://dummy-dsp.s3.eu-central-1.amazonaws.com/dsp
+        run: curl -o builds/dsp https://dummy-dsp.s3.eu-central-1.amazonaws.com/dsp
 
-      # Runs a single command using the runners shell
-      - name: Run a one-line script
-        run: echo Hello, world!
+      - name: Download tests binary
+        run: curl -o builds/tests https://dummy-dsp.s3.eu-central-1.amazonaws.com/tests
 
-      # Runs a single command using the runners shell
-      - name: Run a one-line script
-        run: pwd && ls -Fla
+      # your code must be built into builds/ssp binary
+      - name: Build SSP binary
+        run: echo Ain't no ssp yet
+
+      # run a battery of tests
+      - name: happy path
+        run: ./builds/tests -test.run Test_HappyPath
+
+      - name: not totally happy path, easy difficulty
+        run: ./builds/tests -test.run Test_LessHappyEasy
+
+      - name: not totally happy path, medium difficulty
+        run: ./builds/tests -test.run Test_LessHappyMedium
+
+      - name: not totally happy path, hard difficulty
+        run: ./builds/tests -test.run Test_LessHappyHard
+
+      - name: not happy at all, easy difficulty
+        run: ./builds/tests -test.run Test_NotHappyEasy
+
+      - name: not happy at all, medium difficulty
+        run: ./builds/tests -test.run Test_NotHappyMedium
+
+      - name: not happy at all, hard difficulty
+        run: ./builds/tests -test.run Test_NotHappyHard
+
+      - name: not happy at all, hardcore difficulty
+        run: ./builds/tests -test.run Test_NotHappyHardcore
