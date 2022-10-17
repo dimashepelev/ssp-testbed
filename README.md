@@ -3,7 +3,7 @@
 Вам нужно:
 - создать новый репозиторий, используя этот как шаблон (зелёная кнопка Use this template)
 - чуть-чуть поправить файл `.github/workflows/runtests.yml` - добавить в него команду сборки бинарника вашего решения, так, чтобы он оказался по пути `builds/ssp`
-- раскомментировать строчки в воркфлоу, которые разрешают запускать builds/ssp
+- раскомментировать строчки в воркфлоу, которые разрешают запускать builds/ssp (`chmod +x builds/ssp`)
 
 Дальше, по идее, можно наслаждаться тестами при каждом обновлении кода в ветке `main`
 
@@ -11,10 +11,10 @@
 
 Чтобы иметь возможность получать обновления автотестов и других частей шаблона, выполните команду:
 
-git remote add -m main template https://github.com/dimashepelev/ssp-testbed.git
+`git remote add -m main template https://github.com/dimashepelev/ssp-testbed.git`
 
 Для обновления кода автотестов выполните команду:
 
-git fetch template && git checkout template/main .github
+`git fetch template && git checkout template/main .github`
 
 Затем добавьте полученные изменения в свой репозиторий.
