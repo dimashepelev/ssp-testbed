@@ -33,7 +33,7 @@ jobs:
 
       # your code must be built into builds/ssp binary
       - name: Build SSP binary
-        run: echo Ain't no ssp yet
+        run: echo Ain\'t no ssp yet
 
       # run a battery of tests
       - name: happy path
