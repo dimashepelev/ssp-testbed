@@ -54,25 +54,25 @@ jobs:
 
       # run a battery of tests
       - name: happy path
-        run: (cd builds && ./tests -test.v -test.run Test_HappyPath)
+        run: (cd builds && ./tests -test.v -test.run Test_HappyPath) && sleep 1
 
       - name: not totally happy path, easy difficulty
-        run: (cd builds && ./tests -test.v -test.run Test_LessHappyEasy)
+        run: (cd builds && ./tests -test.v -test.run Test_LessHappyEasy) && sleep 1
 
       - name: not totally happy path, medium difficulty
-        run: (cd builds && ./tests -test.v -test.run Test_LessHappyMedium)
+        run: (cd builds && ./tests -test.v -test.run Test_LessHappyMedium) && sleep 1
 
       - name: not totally happy path, hard difficulty
-        run: (cd builds && ./tests -test.v -test.run Test_LessHappyHard)
+        run: (cd builds && ./tests -test.v -test.run Test_LessHappyHard) && sleep 1
 
       - name: not happy at all, easy difficulty
-        run: (cd builds && ./tests -test.v -test.run Test_NotHappyEasy)
+        run: (cd builds && ./tests -test.v -test.run Test_NotHappyEasy) && sleep 1
 
       - name: not happy at all, medium difficulty
-        run: (cd builds && ./tests -test.v -test.run Test_NotHappyMedium)
+        run: (cd builds && ./tests -test.v -test.run Test_NotHappyMedium) && sleep 1
 
       - name: not happy at all, hard difficulty
-        run: (cd builds && ./tests -test.v -test.run Test_NotHappyHard)
+        run: (cd builds && ./tests -test.v -test.run Test_NotHappyHard) && sleep 1
 
       - name: not happy at all, hardcore difficulty
-        run: (cd builds && ./tests -test.v -test.run Test_NotHappyHardcore)
+        run: (cd builds && ./tests -test.v -test.run Test_NotHappyHardcore) && sleep 1
