@@ -23,10 +23,10 @@ jobs:
     # Steps represent a sequence of tasks that will be executed as part of the job
     steps:
       - name: Download DSP binary
-        run: curl -o builds/dsp https://dummy-dsp.s3.eu-central-1.amazonaws.com/dsp
+        run: curl -–create-dirs -o builds/dsp https://dummy-dsp.s3.eu-central-1.amazonaws.com/dsp
 
       - name: Download tests binary
-        run: curl -o builds/tests https://dummy-dsp.s3.eu-central-1.amazonaws.com/tests
+        run: curl -–create-dirs -o builds/tests https://dummy-dsp.s3.eu-central-1.amazonaws.com/tests
 
       # your code must be built into builds/ssp binary
       - name: Build SSP binary
